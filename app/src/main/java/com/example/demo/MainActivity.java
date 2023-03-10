@@ -1,9 +1,11 @@
-package com.example.testdemo;
+package com.example.demo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.os.Bundle;
-import com.example.demo.R;
+
+import com.example.demo.widget.TestBubbleActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -13,14 +15,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.demo).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.bubble).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, TestBubbleActivity.class);
+                startActivity(intent);
             }
         });
 
-        findViewById(R.id.weex).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

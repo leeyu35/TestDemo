@@ -11,16 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/demo"
+            android:id="@+id/bubble"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="调试助手"/>
+            android:text="气泡"/>
 
         <Button
-            android:id="@+id/weex"
+            android:id="@+id/test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="weex"/>
+            android:text="test"/>
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>
