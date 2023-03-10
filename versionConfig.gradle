@@ -1,0 +1,14 @@
+ext {
+    android = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion: 16,
+            targetSdkVersion: 26
+    ]
+    support = [
+            appcompatV7: "26.1.0",
+            recyclerView: "26.1.0"
+    ]
+    fastjson = "1.1.70.android"
+    junit = "4.13.2"
+}
