@@ -1,23 +1,16 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.example.testdemo"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-
-        dexOptions {
-            preDexLibraries = false
-            javaMaxHeapSize "4g"
-        }
     }
 
     buildTypes {
@@ -26,23 +19,26 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     lintOptions {
         abortOnError false
     }
 }
 
 dependencies {
-    implementation project(path: ':demo_widget')
-    implementation project(path: ':demo_core')
-    testCompile 'junit:junit:4.13.2'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:multidex:1.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:recyclerview-v7:' + rootProject.ext.support.appcompatV7
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    compile 'com.android.support:support-annotations:28.0.0'
+    testCompile 'junit:junit:' + rootProject.ext.junit
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifactId 'demo-core'
+        }
+    }
 }

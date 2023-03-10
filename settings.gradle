@@ -1,3 +1,4 @@
 rootProject.name = "TestDemo"
 include ':app'
 include ':demo_widget'
+include ':demo_core'

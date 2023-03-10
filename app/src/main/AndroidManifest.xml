@@ -21,6 +21,20 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity android:name=".guide.GuideActivity" />
+        <activity android:name=".guide.TestFragmentActivity" />
+        <activity android:name=".guide.GridViewActivity"></activity>
+        <activity android:name=".guide.FirstActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".guide.RecyclerViewActivity" />
+
+        <activity android:name=".guide.ScrollViewActivity" />
     </application>
 
 </manifest>

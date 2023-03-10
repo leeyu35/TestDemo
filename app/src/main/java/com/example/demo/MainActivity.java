@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.os.Bundle;
 
+import com.example.demo.guide.GuideActivity;
 import com.example.demo.widget.TestBubbleActivity;
 
 
@@ -23,10 +24,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.guide).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, GuideActivity.class);
+                startActivity(intent);
             }
         });
     }

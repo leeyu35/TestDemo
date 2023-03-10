@@ -17,10 +17,10 @@
             android:text="气泡"/>
 
         <Button
-            android:id="@+id/test"
+            android:id="@+id/guide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="test"/>
+            android:text="新手引导"/>
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>
