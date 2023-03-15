@@ -32,9 +32,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".bubble.MainBubbleActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity android:name=".guide.RecyclerViewActivity" />
 
         <activity android:name=".guide.ScrollViewActivity" />
+
+        <activity android:name=".bubble.TestDialogActivity" />
+        <activity android:name=".bubble.HappyBubbleActivity" />
+        <activity android:name=".bubble.SetClickedViewTestActivity" />
     </application>
 
 </manifest>

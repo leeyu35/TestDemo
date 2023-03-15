@@ -1,7 +1,8 @@
-package com.example.demo.widget;
+package com.example.demo.bubble;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.DisplayMetrics;
@@ -11,9 +12,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.demo.MainActivity;
 import com.example.demo.widget.R;
 
-public class TestBubbleActivity extends Activity {
+public class MainBubbleActivity extends Activity {
     /**
      * 全局屏幕的高和宽
      */
@@ -35,6 +37,14 @@ public class TestBubbleActivity extends Activity {
                 int y = location[1]; // view 距离 window 顶边的距离（即 y 轴方向）
 
                 show(-x, -(y + btn.getHeight()));
+            }
+        });
+
+        findViewById(R.id.happyBubble).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainBubbleActivity.this, HappyBubbleActivity.class);
+                startActivity(intent);
             }
         });
     }

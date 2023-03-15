@@ -3,13 +3,7 @@
     package="com.example.demo.widget">
 
     <application>
-        <activity
-            android:name=".TestBubbleActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+
     </application>
 
 </manifest>

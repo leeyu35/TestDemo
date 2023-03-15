@@ -15,7 +15,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="气泡"/>
-
         <Button
             android:id="@+id/guide"
             android:layout_width="match_parent"

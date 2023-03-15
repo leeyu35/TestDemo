@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.os.Bundle;
 
+import com.example.demo.bubble.MainBubbleActivity;
 import com.example.demo.guide.GuideActivity;
-import com.example.demo.widget.TestBubbleActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.bubble).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TestBubbleActivity.class);
+                Intent intent = new Intent(MainActivity.this, MainBubbleActivity.class);
                 startActivity(intent);
             }
         });
