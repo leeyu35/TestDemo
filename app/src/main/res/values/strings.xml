@@ -49,4 +49,13 @@
     <string name="now_click_position">当前点击位置</string>
     <string name="test_use_in_list">测试事件穿透、测试方向自动、\n 测试dialog文本和位置直接动态改变、\n测试滑动取消、测试相对布局偏移</string>
     <string name="clicked_">点击了：</string>
+    <string name="title_activity_two">ActivityTwo</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

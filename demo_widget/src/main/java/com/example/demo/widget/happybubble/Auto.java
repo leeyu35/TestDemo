@@ -3,8 +3,7 @@ package com.example.demo.widget.happybubble;
 /**
  * 自动确定位置
  */
-public enum Auto
-{
+public enum Auto {
     /**
      * 四周
      */

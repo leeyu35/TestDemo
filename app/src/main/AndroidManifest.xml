@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.demo" >
+    package="com.example.demo">
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +9,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestDemo">
         <activity
+            android:name=".ActivityTwo"
+            android:exported="false"
+            android:label="@string/title_activity_two"
+            android:theme="@style/Theme.TestDemo.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ActivityOne"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -16,15 +32,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
-
+        <activity android:name=".AutoMobiumActivity" />
         <activity android:name=".guide.GuideActivity" />
         <activity android:name=".guide.TestFragmentActivity" />
-        <activity android:name=".guide.GridViewActivity"></activity>
+        <activity android:name=".guide.GridViewActivity" />
+        <activity android:name=".anim.ActivityOne" />
+        <activity android:name=".anim.ActivityTwo" />
         <activity android:name=".guide.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,12 +54,11 @@
                 android:value="" />
         </activity>
         <activity android:name=".guide.RecyclerViewActivity" />
-
         <activity android:name=".guide.ScrollViewActivity" />
-
         <activity android:name=".bubble.TestDialogActivity" />
         <activity android:name=".bubble.HappyBubbleActivity" />
         <activity android:name=".bubble.SetClickedViewTestActivity" />
+        <activity android:name=".bubble.DialogFragmentApiUseDemoActivity" />
     </application>
 
 </manifest>

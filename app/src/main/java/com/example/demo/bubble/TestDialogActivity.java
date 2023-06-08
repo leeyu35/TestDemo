@@ -16,6 +16,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.example.demo.R;
+import com.example.demo.core.util.ScreenUtils;
 import com.example.demo.widget.happybubble.Auto;
 import com.example.demo.widget.happybubble.BubbleDialog;
 import com.example.demo.widget.happybubble.BubbleLayout;
@@ -277,9 +278,9 @@ public class TestDialogActivity extends Activity implements View.OnClickListener
                 BubbleLayout bl = new BubbleLayout(this);
                 bl.setBubbleColor(Color.YELLOW);
                 bl.setShadowColor(Color.RED);
-                bl.setLookLength(Util.dpToPx(this, 18));
-                bl.setLookWidth(Util.dpToPx(this, 24));
-                bl.setBubbleRadius(Util.dpToPx(this, 3));
+                bl.setLookLength(ScreenUtils.dp2px(this, 18));
+                bl.setLookWidth(ScreenUtils.dp2px(this, 24));
+                bl.setBubbleRadius(ScreenUtils.dp2px(this, 3));
                 mCurrentDialog = new BubbleDialog(this)
                         .addContentView(LayoutInflater.from(this).inflate(R.layout.dialog_view5, null))
                         .setClickedView(mButton8)
@@ -335,8 +336,8 @@ public class TestDialogActivity extends Activity implements View.OnClickListener
                         .softShowUp()
                         .autoPosition(mAuto)
                         .setLayout(ViewGroup.LayoutParams.MATCH_PARENT,
-                                Util.dpToPx(this, 200),
-                                Util.dpToPx(this, 32))
+                                ScreenUtils.dp2px(this, 200),
+                                ScreenUtils.dp2px(this, 32))
                         .setThroughEvent(mCheckBoxThrough.isChecked(), true);
                 mCurrentDialog.show();
 

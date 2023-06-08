@@ -29,7 +29,7 @@ public class ScreenUtils {
      * @param dp      dp值
      * @return px值
      */
-    public static int dp2px(Context context, int dp) {
+    public static int dp2px(Context context, float dp) {
         return (int) (dp * context.getResources().getDisplayMetrics().density);
     }
 

@@ -19,12 +19,6 @@ import android.widget.TextView;
 public class Util
 {
 
-    public static int dpToPx(Context context, float dipValue)
-    {
-        float scale = context.getApplicationContext().getResources().getDisplayMetrics().density;
-        return (int) (dipValue * scale + 0.5f);
-    }
-
 
     /**
      * 获取状态栏的高度

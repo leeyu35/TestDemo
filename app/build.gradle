@@ -40,6 +40,10 @@ android {
 dependencies {
     implementation project(path: ':demo_widget')
     implementation project(path: ':demo_core')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
+    implementation 'android.arch.navigation:navigation-ui:1.0.0'
     testCompile 'junit:junit:4.13.2'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:multidex:1.0.0'

@@ -8,24 +8,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="100dp"
-            android:text="气泡"
-            tools:layout_editor_absoluteX="146dp"
-            tools:layout_editor_absoluteY="244dp" />
+            android:text="气泡" />
 
         <Button
             android:id="@+id/happyBubble"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="happyBubble" />
+
+        <Button
+            android:id="@+id/dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dialog" />
+
+        <Button
+            android:id="@+id/dialogFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="dialogFragment" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

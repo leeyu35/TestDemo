@@ -1,5 +1,7 @@
 package com.example.demo.widget.happybubble;
 
+import static android.graphics.Canvas.ALL_SAVE_FLAG;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -19,18 +21,15 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-import static android.graphics.Canvas.ALL_SAVE_FLAG;
-
+import com.example.demo.core.util.ScreenUtils;
 import com.example.demo.widget.R;
 
 /**
  * 气泡布局
- * Created by JiajiXu on 17-12-1.
  */
-
 public class BubbleLayout extends FrameLayout {
-    private Paint mPaint;
-    private Path mPath;
+    private final Paint mPaint;
+    private final Path mPath;
     private Look mLook;
     private int mBubblePadding;
     private int mWidth, mHeight;
@@ -46,24 +45,24 @@ public class BubbleLayout extends FrameLayout {
     private int mArrowTopLeftRadius, mArrowTopRightRadius, mArrowDownLeftRadius, mArrowDownRightRadius;
 
     private OnClickEdgeListener mListener;
-    private Region mRegion = new Region();
+    private final Region mRegion = new Region();
 
     // 气泡背景图资源
     private int mBubbleBgRes = -1;
     // 气泡背景图
     private Bitmap mBubbleImageBg = null;
     // 气泡背景显示区域
-    private RectF mBubbleImageBgDstRectF = new RectF();
-    private Rect mBubbleImageBgSrcRect = new Rect();
-    private Paint mBubbleImageBgPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
-    private Paint mBubbleImageBgBeforePaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
+    private final RectF mBubbleImageBgDstRectF = new RectF();
+    private final Rect mBubbleImageBgSrcRect = new Rect();
+    private final Paint mBubbleImageBgPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
+    private final Paint mBubbleImageBgBeforePaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
 
     // 气泡边框颜色
     private int mBubbleBorderColor = Color.BLACK;
     // 气泡边框大小
     private int mBubbleBorderSize = 0;
     // 气泡边框画笔
-    private Paint mBubbleBorderPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
+    private final Paint mBubbleBorderPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
 
     /**
      * 箭头指向
@@ -145,24 +144,24 @@ public class BubbleLayout extends FrameLayout {
     private void initAttr(TypedArray a) {
         mLook = Look.getType(a.getInt(R.styleable.BubbleLayout_lookAt, Look.BOTTOM.value));
         mLookPosition = a.getDimensionPixelOffset(R.styleable.BubbleLayout_lookPosition, 0);
-        mLookWidth = a.getDimensionPixelOffset(R.styleable.BubbleLayout_lookWidth, Util.dpToPx(getContext(), 13F));
-        mLookLength = a.getDimensionPixelOffset(R.styleable.BubbleLayout_lookLength, Util.dpToPx(getContext(), 12F));
-        mShadowRadius = a.getDimensionPixelOffset(R.styleable.BubbleLayout_shadowRadius, Util.dpToPx(getContext(), 3.3F));
-        mShadowX = a.getDimensionPixelOffset(R.styleable.BubbleLayout_shadowX, Util.dpToPx(getContext(), 1F));
-        mShadowY = a.getDimensionPixelOffset(R.styleable.BubbleLayout_shadowY, Util.dpToPx(getContext(), 1F));
+        mLookWidth = a.getDimensionPixelOffset(R.styleable.BubbleLayout_lookWidth, ScreenUtils.dp2px(getContext(), 13F));
+        mLookLength = a.getDimensionPixelOffset(R.styleable.BubbleLayout_lookLength, ScreenUtils.dp2px(getContext(), 12F));
+        mShadowRadius = a.getDimensionPixelOffset(R.styleable.BubbleLayout_shadowRadius, ScreenUtils.dp2px(getContext(), 3.3F));
+        mShadowX = a.getDimensionPixelOffset(R.styleable.BubbleLayout_shadowX, ScreenUtils.dp2px(getContext(), 1F));
+        mShadowY = a.getDimensionPixelOffset(R.styleable.BubbleLayout_shadowY, ScreenUtils.dp2px(getContext(), 1F));
 
-        mBubbleRadius = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleRadius, Util.dpToPx(getContext(), 8F));
+        mBubbleRadius = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleRadius, ScreenUtils.dp2px(getContext(), 8F));
         mLTR = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleLeftTopRadius, -1);
         mRTR = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleRightTopRadius, -1);
         mRDR = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleRightDownRadius, -1);
         mLDR = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleLeftDownRadius, -1);
         
-        mArrowTopLeftRadius   = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleArrowTopLeftRadius,  Util.dpToPx(getContext(), 3F));
-        mArrowTopRightRadius  = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleArrowTopRightRadius, Util.dpToPx(getContext(), 3F));
-        mArrowDownLeftRadius  = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleArrowDownLeftRadius, Util.dpToPx(getContext(), 6F));
-        mArrowDownRightRadius = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleArrowDownRightRadius, Util.dpToPx(getContext(), 6F));
+        mArrowTopLeftRadius   = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleArrowTopLeftRadius,  ScreenUtils.dp2px(getContext(), 3F));
+        mArrowTopRightRadius  = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleArrowTopRightRadius, ScreenUtils.dp2px(getContext(), 3F));
+        mArrowDownLeftRadius  = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleArrowDownLeftRadius, ScreenUtils.dp2px(getContext(), 6F));
+        mArrowDownRightRadius = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubbleArrowDownRightRadius, ScreenUtils.dp2px(getContext(), 6F));
 
-        mBubblePadding = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubblePadding, Util.dpToPx(getContext(), 8));
+        mBubblePadding = a.getDimensionPixelOffset(R.styleable.BubbleLayout_bubblePadding, ScreenUtils.dp2px(getContext(), 8));
         mShadowColor = a.getColor(R.styleable.BubbleLayout_shadowColor, Color.GRAY);
         mBubbleColor = a.getColor(R.styleable.BubbleLayout_bubbleColor, Color.WHITE);
 

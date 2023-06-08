@@ -1,5 +1,7 @@
 package com.example.demo.widget.happybubble;
 
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -16,8 +18,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-
+import com.example.demo.core.util.ScreenUtils;
 import com.example.demo.widget.R;
 
 public class BubbleDialog extends Dialog {
@@ -57,7 +58,7 @@ public class BubbleDialog extends Dialog {
     private Auto mAuto;//记录自动确定位置的方案
     private boolean isThroughEvent = false;//是否穿透Dialog事件交互
     private boolean mCancelable;//是否能够取消
-    private int[] clickedViewLocation = new int[2];
+    private final int[] clickedViewLocation = new int[2];
     private Activity mActivity;
     private ViewTreeObserver.OnGlobalLayoutListener mOnGlobalLayoutListener;
 
@@ -81,8 +82,6 @@ public class BubbleDialog extends Dialog {
 
                     x += event.getX();
                     float y = params.y + event.getY();
-
-//                LogUtil.e2(String.format("(%s, %s) > (%s, %s)", event.getX(), event.getY(), x, y));
                     event.setLocation(x, y);
                     mActivity.getWindow().getDecorView().dispatchTouchEvent(event);
                     return true;
@@ -520,7 +519,7 @@ public class BubbleDialog extends Dialog {
      * 设置x方向偏移量
      */
     public <T extends BubbleDialog> T setOffsetX(int offsetX) {
-        this.mOffsetX = Util.dpToPx(getContext(), offsetX);
+        this.mOffsetX = ScreenUtils.dp2px(getContext(), offsetX);
         return (T) this;
     }
 
@@ -528,7 +527,7 @@ public class BubbleDialog extends Dialog {
      * 设置y方向偏移量
      */
     public <T extends BubbleDialog> T setOffsetY(int offsetY) {
-        this.mOffsetY = Util.dpToPx(getContext(), offsetY);
+        this.mOffsetY = ScreenUtils.dp2px(getContext(), offsetY);
         return (T) this;
     }
 
@@ -536,7 +535,7 @@ public class BubbleDialog extends Dialog {
      * 设置dialog相对与被点击View的偏移
      */
     public <T extends BubbleDialog> T setRelativeOffset(int relativeOffset) {
-        this.mRelativeOffset = Util.dpToPx(getContext(), relativeOffset);
+        this.mRelativeOffset = ScreenUtils.dp2px(getContext(), relativeOffset);
         return (T) this;
     }
 
