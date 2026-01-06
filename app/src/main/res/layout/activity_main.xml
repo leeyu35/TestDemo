@@ -25,6 +25,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="动画"/>
+
+        <Button
+            android:id="@+id/pay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="支付"/>
+
+        <Button
+            android:id="@+id/editor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="编辑"/>
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

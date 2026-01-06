@@ -1,0 +1,106 @@
+{
+  "name": "TestDemo 路由验证测试",
+  "description": "验证 TestDemo 应用的主要页面路由和功能",
+  "version": "1.0.0",
+  "steps": [
+    {
+      "comment": "步骤 1: 启动应用"
+    },
+    {
+      "launch_app": "com.example.demo"
+    },
+    {
+      "wait": 2000
+    },
+    {
+      "screenshot": "01_main_activity"
+    },
+    {
+      "comment": "步骤 2: 测试气泡功能入口"
+    },
+    {
+      "tap": {
+        "resourceId": "bubble"
+      }
+    },
+    {
+      "wait": 1500
+    },
+    {
+      "screenshot": "02_automobium_activity"
+    },
+    {
+      "press_key": "back"
+    },
+    {
+      "wait": 1000
+    },
+    {
+      "comment": "步骤 3: 测试引导功能入口"
+    },
+    {
+      "tap": {
+        "resourceId": "guide"
+      }
+    },
+    {
+      "wait": 2000
+    },
+    {
+      "screenshot": "03_guide_activity"
+    },
+    {
+      "press_key": "back"
+    },
+    {
+      "wait": 1000
+    },
+    {
+      "comment": "步骤 4: 测试动画功能入口"
+    },
+    {
+      "tap": {
+        "resourceId": "anim"
+      }
+    },
+    {
+      "wait": 1500
+    },
+    {
+      "screenshot": "04_activity_one"
+    },
+    {
+      "press_key": "back"
+    },
+    {
+      "wait": 1000
+    },
+    {
+      "comment": "步骤 5: 测试编辑器功能入口"
+    },
+    {
+      "tap": {
+        "resourceId": "editor"
+      }
+    },
+    {
+      "wait": 1500
+    },
+    {
+      "screenshot": "05_editor_activity"
+    },
+    {
+      "press_key": "back"
+    },
+    {
+      "wait": 1000
+    },
+    {
+      "screenshot": "06_back_to_main"
+    },
+    {
+      "comment": "测试完成"
+    }
+  ]
+}
+

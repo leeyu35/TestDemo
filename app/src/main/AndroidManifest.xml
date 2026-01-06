@@ -7,9 +7,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TestDemo">
+        android:theme="@style/Theme.TestDemo"
+        android:allowBackup="false">
         <activity
-            android:name=".ActivityTwo"
+            android:name=".anim.ActivityTwo"
             android:exported="false"
             android:label="@string/title_activity_two"
             android:theme="@style/Theme.TestDemo.NoActionBar">
@@ -18,7 +19,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ActivityOne"
+            android:name=".anim.ActivityOne"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -37,14 +38,7 @@
         <activity android:name=".guide.GuideActivity" />
         <activity android:name=".guide.TestFragmentActivity" />
         <activity android:name=".guide.GridViewActivity" />
-        <activity android:name=".anim.ActivityOne" />
-        <activity android:name=".anim.ActivityTwo" />
         <activity android:name=".guide.FirstActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".bubble.MainBubbleActivity"
@@ -59,6 +53,7 @@
         <activity android:name=".bubble.HappyBubbleActivity" />
         <activity android:name=".bubble.SetClickedViewTestActivity" />
         <activity android:name=".bubble.DialogFragmentApiUseDemoActivity" />
+        <activity android:name=".editor.EditorActivity" />
     </application>
 
 </manifest>

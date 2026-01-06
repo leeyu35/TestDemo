@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "android-devtools-mcp": {
+      "type": "stdio",
+      "command": "tnpx",
+      "args": [
+        "-y",
+        "@ali/android-devtools-mcp@latest",
+        "--stdio",
+        "--preset",
+        "full"
+      ],
+      "env": {}
+    }
+  }
+}
